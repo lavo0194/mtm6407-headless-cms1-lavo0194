@@ -6,7 +6,7 @@
       </p>
       <p>Rating: {{ review.rating }}</p>
       <p>Full Review Details:</p>
-      <p>{{ review.fullReviewText }}</p> <!-- Assume full review text is available -->
+      <p>{{ review.fullReviewText }}</p> 
     </div>
     <p v-else>Review not found.</p>
   </template>
@@ -22,7 +22,7 @@
   onMounted(async () => {
     try {
       const response = await axios.get(`http://localhost:1337/api/reviews/${route.params.id}`);
-      review.value = response.data.data; // Set review data based on ID
+      review.value = response.data.data; 
     } catch (error) {
       console.error('Error fetching review:', error);
     }

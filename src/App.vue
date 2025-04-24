@@ -9,7 +9,7 @@ import ReviewList from './components/ReviewList.vue'
 </script>
 
 <style>
-/* Keep or customize styles as you like */
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;

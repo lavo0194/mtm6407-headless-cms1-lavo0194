@@ -2,7 +2,7 @@
     <div>
       <h2>Reviews</h2>
       
-      <!-- Search Input -->
+      
       <input
         type="text"
         v-model="searchTerm"
@@ -10,7 +10,7 @@
         class="search-input"
       />
   
-      <!-- Filtered List of Reviews -->
+      
       <ul v-if="filteredReviews.length > 0">
         <li v-for="review in filteredReviews" :key="review.id" @click="viewReview(review.id)">
           <h3>{{ review.Title }}</h3>
@@ -35,20 +35,20 @@
   onMounted(async () => {
     try {
       const response = await axios.get('http://localhost:1337/api/reviews');
-      reviews.value = response.data.data; // Store fetched reviews
+      reviews.value = response.data.data; 
     } catch (error) {
       console.error('Error fetching reviews:', error);
     }
   });
   
-  // Filter reviews based on search term
+  
   const filteredReviews = computed(() => {
     return reviews.value.filter(review => {
       return review.Title.toLowerCase().includes(searchTerm.value.toLowerCase());
     });
   });
   
-  // Navigate to full review page
+  
   const viewReview = (id) => {
     router.push({ name: 'review', params: { id } });
   };

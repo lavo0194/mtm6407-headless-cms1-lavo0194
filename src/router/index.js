@@ -12,7 +12,7 @@ const routes = [
     path: '/review/:id',
     name: 'review',
     component: FullReview,
-    props: true, // Pass the route params to the component as props
+    props: true, 
   },
 ];
 
